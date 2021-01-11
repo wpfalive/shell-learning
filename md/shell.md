@@ -420,3 +420,12 @@ echo -e '123\b'
 echo -e '123\b4567'
 ```
 
+## 后续计划
+* 重复工作流程化
+
+* 命令标准化
+git add git commit git push git merge等流程统一
+
+* 命令校验
+
+比如在git add, git ci可以对前置状态，备注信息等做校验

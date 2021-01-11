@@ -132,7 +132,7 @@ else
     echo "Branch : "$line
   done
   tips=$(git merge origin/$cur_branch | grep confilct)
-  if [$tips -gt 0];then
+  if [ $tips -gt 0 ];then
     git merge --abort
     echo "Git auto merge exists conflicts. Merge Canceled."
     echo $tips >&2

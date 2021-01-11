@@ -75,23 +75,24 @@ git_push(){
   push_result="";
   if [[ -z $origin_params && -z $branch_params ]]; then
     echo ">>>>>> push origin $current_branch"
-    sleep 5 
     git push origin $current_branch
+    sleep 5
 
   elif [[ -n $origin_params && -n $branch_params ]]; then
     echo ">>>>>> push $origin_params $branch_params"
-    sleep 5 
     git push $origin_params $branch_params
+    sleep 5
 
   elif [[ -z $origin_params && -n $branch_params  ]]; then
       echo ">>>>>> push origin $branch_params"
-      sleep 5
+      
       git push origin $branch_params
+      sleep 5
 
   elif [[ -n $origin_params && -z $branch_params  ]]; then
       echo ">>>>>> push $origin_params $current_branch"
-      sleep 5
-      git push $origin_params $current_branch    
+      git push $origin_params $current_branch
+      sleep 5  
   else
       echo ">>>>>> end push <<<<<<"    
   fi

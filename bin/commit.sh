@@ -99,6 +99,7 @@ git_push(){
 }
 
 
+cur_branch=$(git symbolic-ref --short -q HEAD)
 read -p "默认push当前分支，Q代表quit,其他单词代表切换分支 : " branch
 if [[ $branch == "Y" || $branch == "y" || -z $branch ]] ; then
   # echo  "你输入的是:  $branch "
@@ -122,12 +123,19 @@ else
   git_add;
   git_commit;
   git_push;
-  git checkout $branch
+  git checkout dev;
   echo -e "当前分支: \n $(git rev-parse --abbrev-ref HEAD) "
-  git merge -;
-  # git_add;
-  # git_commit;
-  # git_push;
-  exit;
+  echo -e "准备合并"
+  sleep 2
+  for line in $(git br --remote)
+  do
+    echo "Branch : "$line
+  done
+  tips=$(git merge origin/$cur_branch | grep confilct)
+  # if [${!tips} -gt 0];then
+  #   git merge --abort
+  #   echo "Git auto merge exists conflicts. Merge Canceled."
+  #   echo $tips >&2
+  #   exit 101
+  # fi
 fi
-

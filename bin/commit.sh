@@ -123,7 +123,7 @@ else
   git_add;
   git_commit;
   git_push;
-  git checkout origin/dev;
+  git checkout dev;
   echo -e "当前分支: \n $(git rev-parse --abbrev-ref HEAD) "
   echo -e "准备合并"
   sleep 2
@@ -131,7 +131,7 @@ else
   do
     echo "Branch : "$line
   done
-  # tips=$(git merge origin/dev | grep confilct)
+  tips=$(git merge origin/$cur_branch | grep confilct)
   # if [${!tips} -gt 0];then
   #   git merge --abort
   #   echo "Git auto merge exists conflicts. Merge Canceled."

@@ -127,14 +127,15 @@ else
   echo -e "当前分支: \n $(git rev-parse --abbrev-ref HEAD) "
   echo -e "准备合并"
   sleep 2
-  tips=$(git merge remotes/origin/dev | grep confilct)
-  if [${!tips} -gt 0];then
-    git merge --abort
-    echo "Git auto merge exists conflicts. Merge Canceled."
-    echo $tips >&2
-    exit 101
-    # git_add;
-    # git_commit;
-    # git_push;
-  fi
+  for line in $(git br --remote)
+  do
+    echo "Branch : "$line
+  done
+  # tips=$(git merge origin/dev | grep confilct)
+  # if [${!tips} -gt 0];then
+  #   git merge --abort
+  #   echo "Git auto merge exists conflicts. Merge Canceled."
+  #   echo $tips >&2
+  #   exit 101
+  # fi
 fi

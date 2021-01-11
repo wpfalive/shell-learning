@@ -124,8 +124,9 @@ else
   git_commit;
   git_push;
   git checkout origin/dev;
-  sleep 2
   echo -e "当前分支: \n $(git rev-parse --abbrev-ref HEAD) "
+  echo -e "准备合并"
+  sleep 2
   tips=$(git merge origin/dev | grep confilct)
   if [${!tips} -gt 0];then
     git merge --abort
@@ -135,6 +136,5 @@ else
     # git_add;
     # git_commit;
     # git_push;
-    exit;
   fi
 fi

@@ -9,10 +9,12 @@
 git add .
 git ci -m '修复...问题'
 # git ci -a -m '修复...问题'
+
 git push
 git co dev
 git merge -
 # 有冲突解决冲突
+
 git push
 git co -
 ```

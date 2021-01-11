@@ -431,6 +431,11 @@ git add git commit git push git merge等流程统一
 
 * 简单化
 
+* 执行后打开cicd
+```sh
+open -a "Google Chrome" --args 'http://cicd.leoao-inc.com'
+```
+
 提供常用功能，比如暂存，回滚，查看日志，删除分支等，一个命令完成
 
 比如在git add, git ci可以对前置状态，备注信息等做校验

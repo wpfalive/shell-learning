@@ -139,4 +139,6 @@ else
     echo $tips >&2
     exit 101
   fi
+  echo "========= 合并完成，开始push =========="
+  git push
 fi

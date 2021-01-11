@@ -60,7 +60,8 @@ git_commit(){
 
 git_push(){
   echo ">>>>>> 执行 git push 之前,本地文件状态如下 <<<<<<"
-  git status
+  #git status
+  echo "$(git status)"
   current_branch=$(git symbolic-ref --short -q HEAD)
   echo ">>>>>> 当前分支:$current_branch <<<<<<"
   read -p "是否确定push？Y|N : " push_confirm

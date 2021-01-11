@@ -1,6 +1,6 @@
 #!/bin/sh
 # 
-author = wpf
+author = wpfaaa
 echo ' >>>>>> start push <<<<<< '  
 echo " ====== 当前分支 ====== "
 branch=`git rev-parse --abbrev-ref HEAD`

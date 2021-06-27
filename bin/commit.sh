@@ -2,7 +2,7 @@
 #
 author=foo
 author=`whoami`
-echo ' >>>>>> start push <<<<<< '  
+# echo ' >>>>>> start push <<<<<< '
 echo " ====== 当前分支 ====== "
 branch=`git rev-parse --abbrev-ref HEAD`
 echo $branch

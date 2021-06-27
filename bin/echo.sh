@@ -1,1 +1,0 @@
-# http://www.zsythink.net/archives/96

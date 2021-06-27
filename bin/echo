@@ -1,0 +1,10 @@
+# http://www.zsythink.net/archives/96
+#!/bin/bash
+echo -n "<HTML>
+        <HEAD>
+          <TITLE>Page Title</TITLE>
+        </HEAD>
+      <BODY>
+        Page body.
+      </BODY>
+    <HTML>"
